@@ -1,0 +1,41 @@
+ project:
+  name: shopease-sentiment-analysis
+  version: "1.0.0"
+  description: "Multilingual sentiment analysis for ShopEase Europe customer feedback"
+
+paths:
+  raw_data: "data/raw/raw_reviews.csv"
+  processed_data: "data/processed/"
+  models: "models/"
+  reports: "reports/"
+  figures: "reports/figures/"
+
+data:
+  target_column: "sentiment"
+  text_column: "review"
+  languages:
+    - en
+    - de
+    - fr
+    - es
+  sentiment_classes:
+    - positive
+    - negative
+    - neutral
+  test_size: 0.2
+  val_size: 0.1
+  random_state: 42
+
+model:
+  baseline:
+    - naive_bayes
+    - logistic_regression
+  advanced:
+    - xlm_roberta
+  primary_metric: "weighted_f1"
+  secondary_metric: "accuracy"
+
+mlflow:
+  experiment_name: "shopease-sentiment"
+  tracking_uri: "mlruns/"
+  
