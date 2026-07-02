@@ -1,6 +1,5 @@
 import streamlit as st
 from transformers import pipeline
-import time
 
 # Page configuration
 st.set_page_config(
@@ -35,12 +34,29 @@ colour_map = {
 # App header
 st.title("🛍️ ShopEase Europe")
 st.subheader("Customer Review Sentiment Analyser")
-st.markdown("Paste a customer review below to classify its sentiment using a fine-tuned DistilBERT model trained on genuine Amazon customer reviews.")
+st.markdown("""
+This tool classifies customer reviews as **Negative**, **Positive**, or **Neutral** 
+using a DistilBERT model fine-tuned on 21,055 genuine Amazon customer reviews.
+The model returns a predicted sentiment label and confidence score across all three classes.
+""")
+
+st.markdown("#### Example reviews to try")
+st.markdown("""
+**🔴 Negative**
+> *"The driver marked my order as delivered but nothing arrived. I've called customer service four times and still have no resolution."*
+
+**🟢 Positive**
+> *"Fast delivery, excellent packaging, and outstanding customer support. Been shopping here for years and never disappointed."*
+
+**🟡 Neutral**
+> *"The product works as described. Nothing particularly impressive or disappointing about it."*
+""")
+
 st.markdown("---")
 
 # Input
 review_text = st.text_area(
-    "Customer Review",
+    "Paste a customer review below",
     placeholder="e.g. The delivery was late and the driver left the package in the rain...",
     height=150
 )
@@ -61,7 +77,7 @@ if st.button("Analyse Sentiment", type="primary"):
         colour = colour_map[sentiment]
 
         st.markdown("---")
-        st.markdown(f"### Predicted Sentiment")
+        st.markdown("### Predicted Sentiment")
         st.markdown(
             f"<h2 style='color:{colour}'>{sentiment}</h2>",
             unsafe_allow_html=True
@@ -74,23 +90,5 @@ if st.button("Analyse Sentiment", type="primary"):
             pct = s["score"] * 100
             st.progress(s["score"], text=f"{label}: {pct:.1f}%")
 
-st.markdown("""
-### Welcome to the ShopEase Europe Sentiment Classifier
-
-Enter any customer review below to predict whether its sentiment is **Positive**, **Negative**, or **Neutral** using a **DistilBERT** model fine-tuned on **21,055 Amazon customer reviews**.
-
-The model returns both the predicted sentiment and its confidence score.
-
-#### Try these example reviews
-
-**🔴 Negative**
-> *"The driver marked my order as delivered, but nothing arrived. I've called customer service four times and still haven't received a resolution."*
-
-**🟢 Positive**
-> *"Fast delivery, excellent packaging, and outstanding customer support. I've been shopping here for years and have always had a great experience."*
-
-**🟡 Neutral**
-> *"The product works as described. Nothing particularly impressive or disappointing about it."*
-""")
-
 st.markdown("---")
+st.caption("Model: AishatOlisa/shopease-sentiment-distilbert | GitHub: github.com/AishatOlisa/shopease-sentiment-analysis")
