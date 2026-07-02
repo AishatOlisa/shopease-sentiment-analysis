@@ -288,6 +288,10 @@ shopease-sentiment-analysis/
 
 ## Setup & Installation
 
+**Live Demo:** [https://shopease-sentiment-analysis.streamlit.app/](https://shopease-sentiment-analysis.streamlit.app/)
+
+**Repository:** [https://github.com/AishatOlisa/shopease-sentiment-analysis](https://github.com/AishatOlisa/shopease-sentiment-analysis)
+
 ```bash
 # Clone the repository
 git clone https://github.com/AishatOlisa/shopease-sentiment-analysis.git
@@ -296,7 +300,7 @@ cd shopease-sentiment-analysis
 # Install dependencies
 pip install -r requirements.txt
 
-# Launch the Streamlit application
+# Launch the Streamlit application locally
 streamlit run streamlit_app.py
 ```
 
@@ -304,7 +308,7 @@ The fine-tuned DistilBERT model is hosted on Hugging Face Hub at
 `AishatOlisa/shopease-sentiment-distilbert` and loads automatically 
 at runtime. No manual model download required.
 
-## About 
+## About
 
 **Aishat Olisa-Samson**
 Data Scientist focused on Machine Learning, Decision Analytics, and 
@@ -312,4 +316,4 @@ transforming data into actionable business insight.
 
 - LinkedIn: https://www.linkedin.com/in/aishat-olisa-samson-0266122a0
 - Hugging Face: https://huggingface.co/AishatOlisa
-
+- Live App: https://shopease-sentiment-analysis.streamlit.app/
