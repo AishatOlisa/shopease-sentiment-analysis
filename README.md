@@ -290,7 +290,7 @@ shopease-sentiment-analysis/
 
 ```bash
 # Clone the repository
-git clone https://github.com/Aishahbooks/shopease-sentiment-analysis.git
+git clone https://github.com/AishatOlisa/shopease-sentiment-analysis.git
 cd shopease-sentiment-analysis
 
 # Install dependencies
