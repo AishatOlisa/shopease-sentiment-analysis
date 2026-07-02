@@ -16,6 +16,7 @@ Built on 21,055 genuine Amazon customer reviews, the project combines
 classical machine learning, DistilBERT fine-tuning, and rigorous 
 exploratory analysis to move beyond surface-level sentiment labelling 
 toward evidence-based root cause identification.
+![ShopEase Sentiment Dashboard](reports/figures/dashboard_overview.png)
 
 ## Business Problem
 
@@ -98,6 +99,7 @@ trajectories: US negative sentiment peaked earlier in 2022 before
 partially recovering, while GB overtook the US in 2023 and remained 
 elevated through 2024, suggesting distinct underlying causes across 
 markets rather than a single shared problem.
+![Sentiment Trend 2019-2024](reports/figures/production_sentiment_trend.png)
 
 ### Root Cause Investigation
 Word frequency trend analysis between 2019-2020 and 2021-2022 revealed 
@@ -179,6 +181,7 @@ accuracy, given the severe class imbalance. Accuracy of 0.88 on Naive
 Bayes masked complete failure on the neutral class. DistilBERT was 
 fine-tuned for 3 epochs on a T4 GPU via Google Colab, with the best 
 checkpoint selected based on validation weighted F1.
+![DistilBERT Confusion Matrix](reports/figures/production_distilbert_confusion_matrix.png)
 
 ## Tech Stack
 
