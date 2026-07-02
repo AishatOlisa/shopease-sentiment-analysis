@@ -74,5 +74,23 @@ if st.button("Analyse Sentiment", type="primary"):
             pct = s["score"] * 100
             st.progress(s["score"], text=f"{label}: {pct:.1f}%")
 
+st.markdown("""
+### Welcome to the ShopEase Europe Sentiment Classifier
+
+Enter any customer review below to predict whether its sentiment is **Positive**, **Negative**, or **Neutral** using a **DistilBERT** model fine-tuned on **21,055 Amazon customer reviews**.
+
+The model returns both the predicted sentiment and its confidence score.
+
+#### Try these example reviews
+
+**🔴 Negative**
+> *"The driver marked my order as delivered, but nothing arrived. I've called customer service four times and still haven't received a resolution."*
+
+**🟢 Positive**
+> *"Fast delivery, excellent packaging, and outstanding customer support. I've been shopping here for years and have always had a great experience."*
+
+**🟡 Neutral**
+> *"The product works as described. Nothing particularly impressive or disappointing about it."*
+""")
+
 st.markdown("---")
-st.caption("Model: DistilBERT fine-tuned on 21,055 genuine Amazon customer reviews | ShopEase Europe Sentiment Analysis Project")
