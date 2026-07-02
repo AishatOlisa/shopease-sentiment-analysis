@@ -54,7 +54,7 @@ if st.button("Analyse Sentiment", type="primary"):
             model = load_model()
             results = model(review_text[:512])
 
-        scores = results[0]
+        scores = results[0] if isinstance(results[0], list) else results
         top = max(scores, key=lambda x: x["score"])
         sentiment = label_map.get(top["label"], top["label"])
         confidence = top["score"] * 100
