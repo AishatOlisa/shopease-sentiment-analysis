@@ -17,6 +17,7 @@ classical machine learning, DistilBERT fine-tuning, and rigorous
 exploratory analysis to move beyond surface-level sentiment labelling 
 toward evidence-based root cause identification.
 ![ShopEase Sentiment Dashboard](reports/figures/dashboard_overview.png)
+![ShopEase Geography & Drivers Dashboard](reports/figures/dashboard_geography_drivers.png)
 
 ## Business Problem
 
